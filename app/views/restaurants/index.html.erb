@@ -1,0 +1,31 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://ziyad-jkxqimhkg2pofd.netdna-ssl.com/wp-content/uploads/2018/02/ziyad-home-page-photo.jpg);">
+  <div class="container">
+    <h1>Welcome to Yelp-ish!</h1>
+    <h2>Discover plenty of awesome restaurants in a snap</h2>
+    <%= link_to new_restaurant_path, class: "btn btn-primary" do %>
+    <strong><i class="far fa-plus-square"></i> Add a new restaurant</strong>
+    <% end %>
+  </div>
+</div>
+
+<div class='container'>
+
+  <h3>All restaurants</h3>
+
+  <div class='cards'>
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-restaurant">
+        <%= link_to restaurant_path(restaurant) do %>
+          <img src="https://www.doitinparis.com/files/2018/bars-restos-foods/street-food/street-food.jpg", height="200px">
+        <% end %>
+        <div class="card-restaurant-infos">
+          <div>
+            <h2><%= restaurant.name %></h2>
+            <p><i class="fas fa-phone"></i> <%= restaurant.phone_number %>
+            <br><i class="fas fa-map-marker-alt"></i> <%= restaurant.address %></p>
+          </div>
+          <h2 class="card-restaurant-category"><%= restaurant.category.capitalize %></h2>
+        </div>
+      </div>
+    <% end %>
+</div>

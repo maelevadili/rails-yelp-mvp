@@ -1,0 +1,12 @@
+<h1>Add a new restaurant</h1>
+
+<!-- Logique de partial, ou on abstrait du markup HTML repetitif dans
+une espece de sub view a part, pour ensuite inserer cette sub view avec
+un render -->
+
+<%= render 'form', restaurant: @restaurant_params %>
+
+<hr>
+<%= link_to restaurants_path do %>
+  <i class="fas fa-arrow-left"></i> Back to restaurant list
+<% end %>

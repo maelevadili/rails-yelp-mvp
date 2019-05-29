@@ -1,0 +1,8 @@
+<h1>Add a review</h1>
+
+<%= render 'form', restaurant: @restaurant_params, review: @review %>
+
+<hr>
+<%= link_to restaurant_path(@restaurant) do %>
+  <i class="fas fa-arrow-left"></i> Back to restaurant
+<% end %>
